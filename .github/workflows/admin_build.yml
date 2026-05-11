@@ -1,0 +1,49 @@
+name: Build Admin iOS IPA
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Generate App Icons
+        run: flutter pub run flutter_launcher_icons
+
+      - name: Set Deployment Target
+        run: |
+          sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = [0-9.]*/IPHONEOS_DEPLOYMENT_TARGET = 15.0/g' ios/Runner.xcodeproj/project.pbxproj
+
+      - name: Build iOS
+        run: flutter build ios --release --no-codesign --build-number=${{ github.run_number }}
+
+      - name: Package IPA (Sideload Ready)
+        run: |
+          cd build/ios/iphoneos
+          mkdir Payload
+          cp -r Runner.app Payload/
+          zip -r ToeicAdmin.ipa Payload
+          
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Toeic_Admin_iOS
+          path: build/ios/iphoneos/ToeicAdmin.ipa

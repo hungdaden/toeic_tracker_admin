@@ -1,0 +1,52 @@
+# Flutter related
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+
+# Web related
+.web/
+
+# Electron related
+electron_app/node_modules/
+electron_app/dist/
+build/desktop/
+
+# Android related
+.gradle/
+local.properties
+google-services.json
+*.kwks
+*.keystore
+!debug.keystore
+
+# iOS related
+ios/Flutter/Generated.xcconfig
+GoogleService-Info.plist
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/App.framework
+ios/Flutter/App.podspec
+ios/Flutter/engine_*.framework
+ios/Pods/
+*.ipa
+admin-sideload.ipa
+
+# Symbolication related
+app.*.symbols
+
+# IDE related
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*.DS_Store
+
+# Logs
+*.log
+build_log.txt
+
+
+firestore.rules

@@ -1,0 +1,38 @@
+{
+  "id": "ets_2024_test_01",
+  "title": "ETS TOEIC 2024 - Test 1 (Sample)",
+  "description": "Bộ đề thi thực tế từ ETS 2024, cập nhật cấu trúc mới nhất.",
+  "timeLimitMinutes": 120,
+  "questions": [
+    {
+      "number": 1,
+      "part": 0,
+      "questionText": "Look at the picture marked number 1 in your test book.",
+      "options": ["The man is fixing a car.", "The man is painting a wall.", "The man is cleaning the floor.", "The man is reading a book."],
+      "correctOptionIndex": 1,
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/toeic-tracker-52828.appspot.com/o/samples%2Fpart1_01.jpg?alt=media"
+    },
+    {
+      "number": 7,
+      "part": 1,
+      "questionText": "Where is the nearest post office?",
+      "options": ["At three o'clock.", "Just around the corner.", "By express mail."],
+      "correctOptionIndex": 1
+    },
+    {
+      "number": 101,
+      "part": 4,
+      "questionText": "The marketing director is ------- for the new advertising campaign.",
+      "options": ["responsible", "responsibility", "responsibly", "responsiveness"],
+      "correctOptionIndex": 0
+    },
+    {
+      "number": 147,
+      "part": 6,
+      "passage": "To: All Employees\nFrom: Management\nSubject: Office Renovation\n\nWe are pleased to announce that the office will be renovated starting next Monday. -------. Please make sure to clear your desks by Friday afternoon.",
+      "questionText": "Which sentence best fits the gap?",
+      "options": ["The project will take two weeks.", "We need more office supplies.", "The meeting has been canceled.", "Happy birthday to our CEO."],
+      "correctOptionIndex": 0
+    }
+  ]
+}
